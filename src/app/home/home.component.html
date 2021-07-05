@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center mt-5">
+    <h1>Welcome</h1>
+</div>
+
+<div class="container mt-4">
+    <div class="row d-flex flex-row justify-content-center">
+        <div class="d-flex justify-content-between col-md-4">
+            <p>Country</p>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" >
+                    {{countrySelected}}
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" *ngFor="let country of countries"
+                        (click)="onCountryClick(country)">{{country.country}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between col-md-4">
+            <p>City</p>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{citySelected}}
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" *ngFor="let city of cities" (click)="onCityClick(city)">{{city[0]}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-row justify-content-center mt-3">
+
+        <div class="d-flex justify-content-between col-md-4">
+            <p>Date From</p>
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Start Date" [matDatepickerFilter]="myFilter" 
+                    [formControl]="startDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <!-- <input type="text" value="" formControlName="from"> -->
+
+        </div>
+        <div class="d-flex justify-content-between col-md-4">
+            <p>Date To</p>
+
+            <!-- <input type="text" value="" formControlName="to"> -->
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="End Date" matEndDate [min]="startDate.value"
+                    [formControl]="endDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+        <!-- </form> -->
+        <!-- <p *ngIf="fg.touched && fg.invalid">Please add a valid from and to date</p> -->
+        <div class="row d-flex justify-content-end">
+            <div class="row mt-5 d-flex justify-content-start">
+                <div class="card col-md-4 m-3" style="width: 18rem;" *ngFor="let viewedHotel of viewedHotels"
+                    (click)="select(viewedHotel)" [ngClass]="isActive(viewedHotel)?'border border-primary' : ''">
+                    <img src="../assets/images/cairo.jpg" class="card-img-top mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title" [(ngModel)]='viewedHotels' ngDefaultControl>{{viewedHotel}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card
+                            content.</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="col-md-1 btn btn-primary m-5" *ngIf="ButtonStatus" routerLink='/hoteldetails'
+                (click)='onNextClick()'>Next</button>
+        </div>
+    </div>
+</div>

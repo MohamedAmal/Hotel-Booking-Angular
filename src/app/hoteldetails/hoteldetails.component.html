@@ -1,0 +1,132 @@
+<!-- <div><img src="" alt=""></div> -->
+<div class="container">
+    <div class="container">
+        <div class="row mt-5">
+            <!-- can be made with ngFor -->
+            <div class="col-md 3">
+                <img src="../assets/images/cairo.jpg" class="card-img-top mt-3">
+            </div>
+            <div class="col-md 3">
+                <img src="../assets/images/cairo.jpg" class="card-img-top mt-3">
+            </div>
+            <div class="col-md 3">
+                <img src="../assets/images/cairo.jpg" class="card-img-top mt-3">
+            </div>
+            <div class="col-md 3">
+                <img src="../assets/images/cairo.jpg" class="card-img-top mt-3">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-5">
+
+        <h3>
+            Including an outdoor pool, this 4-star resort features air-conditioned rooms with Wi-Fi and a balcony. Tts
+            private
+            sand and
+            coral beaches are a 5-minste drive any and a free shuttle is provided.
+            Different water sports are available at the private beaches. Guests can enjoy a shisha water pipe or fresh
+            mint
+            fea
+            in the
+            Bedouin beach tent. Temporary tattoos and Bedouin artwork are also available.
+            Sharm Ine's spacious rooms come equipped with a satellite TV and o minibar. Each has private bathroom with a
+            bathtub
+            and a shower. Al are decorated with fle floors and bright colors.
+            Relaxing messages are available at Sharm Amareiris spa, which includes @ hot ub and a sauna. There is also @
+            gym
+            with
+            cardio equipment.
+
+            Reservation for 6 days from 2/12/2020 to 8/12/2020.
+            Total Price : 4000$
+        </h3>
+        <form [formGroup]="myForm">
+            <div class="row d-flex flex-row justify-content-start mt-3">
+                <div  class="row mt-5 mb-5">
+                    <p style="color:red;" *ngIf="formfullname.invalid && formfullname.touched">Your Full Name is not valid</p>
+
+                    <p style="color:red;" *ngIf="formadult.invalid && formadult.touched">Input of Adults is not valid</p>
+    
+                    <p style="color:red;" *ngIf="formid.invalid && formid.touched">input of ID is not valid , it should be 14 numbers</p>
+    
+                    <p style="color:red;" *ngIf="formchildren.invalid && formchildren.touched">Input of Children is not valid</p>
+    
+                </div>
+                <div class="d-flex justify-content-between col-md-4">
+                    <p>Full Name </p>
+                    <!-- <p *ngIf="!formfullname.invalid && !formfullname.touched"></p>
+                    <p *ngIf="formfullname.invalid && formfullname.touched">Error</p> -->
+                    <input type="text" value="Full Name" formControlName="formfullname">
+                    <!-- <p *ngIf="!formfullname.invalid && !formfullname.touched">    </p> -->
+                    <!-- <p style="color:red;" *ngIf="formfullname.invalid && formfullname.touched">Error</p> -->
+                </div>
+                <div class="d-flex justify-content-between col-md-4">
+                    <p>Adults</p>
+                    <!-- <p *ngIf="!formfullname.invalid && !formfullname.touched"></p>
+                    <p *ngIf="formfullname.invalid && formfullname.touched">Error</p> -->
+                    <input type="number" value="Adult" formControlName="formadult">
+                    <!-- <p *ngIf="!formadult.invalid && !formadult.touched">    </p> -->
+                    <!-- <p style="color:red;" *ngIf="formadult.invalid && formadult.touched">Error</p> -->
+                </div>
+            </div>
+            <div class="row d-flex flex-row justify-content-start mt-3 mb-4">
+                <div class="d-flex justify-content-between col-md-4">
+                    <p>ID / Passport numbers</p>
+                    <!-- <p *ngIf="!formfullname.invalid && !formfullname.touched"></p>
+                    <p *ngIf="formfullname.invalid && formfullname.touched">Error</p> -->
+                    <input type="number" value="ID / Passport numbers" formControlName="formid">
+                    <!-- <div class="d-flex flex-column col-md-4"> -->
+                    <!-- <p *ngIf="!formid.invalid && !formid.touched">    </p> -->
+                    <!-- <p style="color:red;" *ngIf="formid.invalid && formid.touched">Error</p> -->
+                    <!-- </div> -->
+                </div>
+                <div class="d-flex justify-content-between col-md-4">
+                    <p>Children</p>
+                    <!-- <p *ngIf="!formfullname.invalid && !formfullname.touched"></p>
+                    <p *ngIf="formfullname.invalid && formfullname.touched">Error</p> -->
+                    <input type="number" value="Children" formControlName="formchildren">
+                    <!-- <p *ngIf="!formchildren.invalid && !formchildren.touched">    </p> -->
+                    <!-- <p style="color:red;" *ngIf="formchildren.invalid && formchildren.touched">Error</p> -->
+                </div>
+            </div>
+
+        </form>
+
+        <form [formGroup]="myForm">
+            <div class="form-check">
+                <input class="form-check-input" (change)="onItemChange($event)" value="Visa Card" type="radio"
+                    name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Visa Card
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" (change)="onItemChange($event)" value="Cash" type="radio"
+                    name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Cash
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" (change)="onItemChange($event)" value="Other" type="radio"
+                    name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Other
+                </label>
+            </div>
+        </form>
+        <!-- <input class="form-check-input" type="radio" value="dog" [(ngModel)]="dog.value" name="gob" value="i" [checked]="true"
+        (change)="onItemChange($event.target.value)" />
+    
+    <input class="form-check-input" type="radio" value="dog" [(ngModel)]="dog.value" name="gob" value="i" [checked]="true"
+        (change)="onItemChange($event.target.value)" /> -->
+
+    </div>
+
+</div>
+<div class="row d-flex justify-content-end">
+    <button class="col-md-1 btn btn-primary m-5" type="button" routerLink='/confirmation'
+        (click)='reserve()'>Reserve</button>
+</div>

@@ -1,0 +1,44 @@
+[
+    {
+        "country": "Egypt",
+        "cities": [
+            {
+                "Cairo": ["Cairo One","Cairo Two"]
+            },
+            {
+                "Alexandria": ["Alexandria One","Alexandria Two","Alexandria Three","Alexandria Four    "]
+            },
+            {
+                "Aswan": ["Aswan One","Aswan Two"]
+            }
+        ]
+    },
+    {
+        "country": "Italy",
+        "cities": [
+            {
+                "Rome": ["Rome One","Rome Two"]
+            },
+            {
+                "Milan": ["Milan One","Milan Two"]
+            },
+            {
+                "Turin": ["Turin One","Turin Two"]
+            }
+        ]
+    },
+    {
+        "country": "United States",
+        "cities": [
+            {
+                "New york": ["New york One","New york Two"]
+            },
+            {
+                "New Jersey": ["New JerseyOne","New JerseyTwo"]
+            },
+            {
+                "California": ["California One","California Two"]
+            }
+        ]
+    }
+]
